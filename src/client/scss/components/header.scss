@@ -1,0 +1,38 @@
+header {
+    position: relative;
+    padding-bottom: 40px;
+    display: flex;
+    
+    .header__logo{
+        position: absolute;
+        left: 20px;
+        font-size: 50px;
+        color: rgb(219, 76, 76);
+        position: relative;
+        .header__txt{
+            position: absolute;
+            top: 4px;
+            margin-left: 10px;
+            font-size: 40px;
+            justify-content: space-around;
+            color: rgb(48, 48, 48);
+            font-weight: bolder;
+        }
+    }
+    nav {
+        position: absolute;
+        right: 20px;
+        top: 30px;
+        width: 560px;
+        ul {
+            display: flex;
+            text-decoration: none;
+            justify-content: space-between;
+            list-style: none;
+            margin-top: 50px;
+            li {
+                margin-left: 30px;
+            }
+        }
+    }
+}
