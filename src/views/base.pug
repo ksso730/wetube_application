@@ -1,0 +1,14 @@
+doctype html 
+html(lang="ko")
+    head 
+        title  #{pageTitle} | Wetube
+        link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous")
+    body 
+        //- include partials/header.pug
+        main 
+            block content
+    //- include partials/footer.pug
+        //- assets폴더의 내용들을 static을 통해 공개
+    //- script(src="/static/js/main.js")
+
+block scripts
