@@ -7,15 +7,9 @@ export const localsMiddleware = (req, res, next) => {
     next();
 }
 
-
-
 export const videoUpload = multer({
     dest : "uploads/videos/",
     limits: {
-        fileSize: 1000000000,
-    },
-    onError: function(err, next) {
-        console.log('error', err);
-        next(err);
+        fileSize: 1024 * 1024,
     }
 })
