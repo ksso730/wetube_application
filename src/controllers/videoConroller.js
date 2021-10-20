@@ -17,8 +17,7 @@ export const getUpload = (req, res) => {
 
 export const postUpload = async(req, res) => {
     const upload = videoUpload.single("video");
-    let next = false;
-    upload(req, res, function(err) {
+    upload(req, res, async function(err) {
         if (err instanceof multer.MulterError){
             return res.status(500).render("upload", {
                 pageTitle: "Upload Video",
@@ -30,9 +29,6 @@ export const postUpload = async(req, res) => {
                 errorMsg: `😓 Upload Failed: ${err}`,
             });
         }
-        next = true;
-    });
-    if (next){
         const {path: fileUrl} = req.file;
         const { title, description, hashtags} = req.body;
         try{
@@ -43,7 +39,6 @@ export const postUpload = async(req, res) => {
                 hashtags: Video.formatHash(hashtags)
             });
             newVideo.save();
-            alert("Upload Success!");
         }catch (error){
             console.log(error);
             return res.status(400).render("upload", {
@@ -52,6 +47,6 @@ export const postUpload = async(req, res) => {
             });
         }
         return res.redirect("/");
-    }
+    });
 
 }
