@@ -14,4 +14,8 @@ export const videoUpload = multer({
     limits: {
         fileSize: 1000000000,
     },
+    onError: function(err, next) {
+        console.log('error', err);
+        next(err);
+    }
 })

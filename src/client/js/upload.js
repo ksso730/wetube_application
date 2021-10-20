@@ -1,10 +1,10 @@
-const uploadName = document.getElementsByClassName("upload__name");
-const videoFile = document.querySelector("input[type=file]");
+const form = document.forms.uploadForm;
+const inputName = form.elements.inputName;
+const videoFile = form.elements.video;
 
 const settingVideoName = () => {
-    var fileName = videoFile.value;
-    console.log(fileName, uploadName);
-    uploadName.value = fileName;
+    let fileName = videoFile.value;
+    inputName.value = fileName;
 }
 
 videoFile.addEventListener("change", settingVideoName);

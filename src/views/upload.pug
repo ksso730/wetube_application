@@ -1,13 +1,13 @@
 extends base
 
 block content
-    //- if errorMessage 
-        //- span=errorMessage 
+    if errorMsg
+        span.errorMessage=errorMsg
     div#upload__container
-        form(method="POST", enctype="multipart/form-data")
-            input(placeholder="File", value="selected file").upload__name
+        form(method="POST", enctype="multipart/form-data" name="uploadForm")
+            input(placeholder="File", value="selected file", name="inputName").upload__name
             label(for="video") Choose Video 
-            input(type="file", accept="video/*", placeholder="Choose File", id="video", name="video").upload__video
+            input(type="file", accept="video/*", id="video", name="video").upload__video
             input(name="title", placeholder="Title", required, type="text", maxlength=80)
             input(name="description", placeholder="Description", required, type="text", minlength=20)
             input(name="hashtags", placeholder="Hashtags, separated by comma.", required, type="text")
